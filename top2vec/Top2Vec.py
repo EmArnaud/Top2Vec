@@ -2654,7 +2654,7 @@ class Top2Vec:
         else:
             return doc_scores, doc_ids
 
-    def generate_topic_wordcloud(self, topic_num, background_color="black", reduced=False):
+    def generate_topic_wordcloud(self, topic_num, colormap, background_color="black", reduced=False):
         """
         Create a word cloud for a topic.
 
@@ -2700,5 +2700,5 @@ class Top2Vec:
         plt.imshow(
             WordCloud(width=1600,
                       height=400,
-                      background_color=background_color).generate_from_frequencies(word_score_dict))
+                      background_color=background_color, colormap=colormap).generate_from_frequencies(word_score_dict))
         plt.title("Topic " + str(topic_num), loc='left', fontsize=25, pad=20)
